@@ -14,6 +14,7 @@
   "description": "",
   "devDependencies": {
     "@design-system/tokens":"*",
+    "@design-system/ts-config": "*",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3"
   }
