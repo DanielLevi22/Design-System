@@ -139,7 +139,7 @@ var {
 
 // src/index.tsx
 var Button = styled("button", {
-  fontFamily: "$default",
+  fontFamily: "default",
   backgroundColor: "$ignite300",
   borderRadius: "$md",
   border: 0,
