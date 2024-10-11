@@ -12,6 +12,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@design-system/react": "*",
+    "@design-system/tokens": "*",
+    "@design-system/eslint-config": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
