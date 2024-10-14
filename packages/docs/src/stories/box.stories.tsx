@@ -1,4 +1,4 @@
-import { ButtonProps, Box ,Text} from "@design-system/react";
+import { BoxProps, Box ,Text} from "@design-system/react";
 import { StoryObj, Meta } from "@storybook/react";
 
 export default {
@@ -11,9 +11,9 @@ export default {
       </>
     )
   }
-} as Meta<ButtonProps>;
+} as Meta<BoxProps>;
 
-export const Primary: StoryObj<ButtonProps>= {
+export const Primary: StoryObj<BoxProps>= {
 
 };
 
