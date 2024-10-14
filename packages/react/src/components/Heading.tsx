@@ -24,10 +24,8 @@ export const Heading = styled('h2', {
     size: 'md',
   },
 })
-
-export interface HeadingProps extends ComponentProps<typeof Heading> {
+export type HeadingProps = ComponentProps<typeof Heading> & {
   as?: ElementType
   children?: React.ReactNode
 }
-
 Heading.displayName = 'Heading'

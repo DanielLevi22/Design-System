@@ -7,4 +7,4 @@ export const Box = styled('div', {
   backgroundColor: '$gray800',
   border: '1px solid $gray800',
 })
-export type ButtonProps = ComponentProps<typeof Box>
+export type BoxProps = ComponentProps<typeof Box>
