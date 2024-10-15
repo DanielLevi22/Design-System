@@ -1443,4 +1443,13 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
 interface TextAreaProps extends ComponentProps<typeof TextArea> {
 }
 
-export { Avatar, type AvatarProps, Box, type BoxProps, Button, type ButtonProps, Heading, type HeadingProps, Text, TextArea, type TextAreaProps, TextInput, type TextInputProps, type TextProps };
+interface MultiStepProps {
+    size: number;
+    currentStep?: number;
+}
+declare function MultiStep({ size, currentStep }: MultiStepProps): react_jsx_runtime.JSX.Element;
+declare namespace MultiStep {
+    var displayName: string;
+}
+
+export { Avatar, type AvatarProps, Box, type BoxProps, Button, type ButtonProps, Heading, type HeadingProps, MultiStep, type MultiStepProps, Text, TextArea, type TextAreaProps, TextInput, type TextInputProps, type TextProps };

@@ -401,11 +401,56 @@ var TextArea = styled("textarea", {
   }
 });
 TextArea.displayName = "TextArea";
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
+  gap: "$2",
+  marginTop: "$1"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray600",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ jsxs3(MultiStepContainer, { children: [
+    /* @__PURE__ */ jsxs3(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ jsx3(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ jsx3(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
+}
+MultiStep.displayName = "MultiStep";
 export {
   Avatar2 as Avatar,
   Box,
   Button,
   Heading,
+  MultiStep,
   Text,
   TextArea,
   TextInput
