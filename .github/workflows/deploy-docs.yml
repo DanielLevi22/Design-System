@@ -2,6 +2,8 @@ name: Deploy docs
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -23,8 +25,13 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Configure git for GitHub Pages
+        run: |
+          git config --global user.name "GH Pages Bot"
+          git config --global user.email "hello@ghbot.com"
+
       - name: Deploy Storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci
+        run: npm run deploy-storybook -- --ci --git-remote-url=https://${{ secrets.GH_TOKEN }}@github.com/DanielLevi22/Design-System.git
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
