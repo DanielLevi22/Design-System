@@ -8,12 +8,14 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
+    "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "storybook build"
   },
   "dependencies": {
     "@design-system/eslint-config": "*",
     "@design-system/react": "*",
     "@design-system/tokens": "*",
+    "@storybook/addon-a11y": "^8.3.5",
     "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",
     "react": "^18.3.1",
@@ -30,6 +32,7 @@
     "@storybook/blocks": "^8.3.5",
     "@storybook/react": "^8.3.5",
     "@storybook/react-vite": "^8.3.5",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.3.5",
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
