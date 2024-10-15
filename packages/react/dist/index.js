@@ -62,6 +62,7 @@ __export(src_exports, {
   Avatar: () => Avatar2,
   Box: () => Box,
   Button: () => Button,
+  Checkbox: () => Checkbox2,
   Heading: () => Heading,
   MultiStep: () => MultiStep,
   Text: () => Text,
@@ -69,6 +70,12 @@ __export(src_exports, {
   TextInput: () => TextInput
 });
 module.exports = __toCommonJS(src_exports);
+
+// src/components/Checkbox/index.tsx
+var import_phosphor_react = require("phosphor-react");
+
+// src/components/Checkbox/styles.ts
+var Checkbox = __toESM(require("@radix-ui/react-checkbox"));
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -166,6 +173,63 @@ var {
   }
 });
 
+// src/components/Checkbox/styles.ts
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  borderRadius: "$xs",
+  lineHeight: 0,
+  cursor: "pointer",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  border: "2px solid $gray900",
+  '&[data-state="checked"]': {
+    backgroundColor: "$ignite300"
+  },
+  '&:focus, &[data-state="checked"]': {
+    border: "2px solid $ignite300"
+  }
+});
+var slideIn = keyframes({
+  from: {
+    transform: "translateY(-100%)"
+  },
+  to: {
+    transform: "translateY(0)"
+  }
+});
+var slideOut = keyframes({
+  from: {
+    transform: "translateY(0)"
+  },
+  to: {
+    transform: "translateY(-100%)"
+  }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  color: "$white",
+  width: "$4",
+  height: "$4",
+  '&[data-state="checked"]': {
+    animation: `${slideIn} 200ms ease-out`
+  },
+  '&[data-state="unchecked"]': {
+    animation: `${slideOut} 200ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
+function Checkbox2(props) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.Check, { weight: "bold" }) }) }));
+}
+Checkbox2.displayName = "Checkbox";
+
 // src/components/Box.tsx
 var Box = styled("div", {
   padding: "$4",
@@ -228,7 +292,7 @@ var Heading = styled("h2", {
 Heading.displayName = "Heading";
 
 // src/components/Avatar/index.tsx
-var import_phosphor_react = require("phosphor-react");
+var import_phosphor_react2 = require("phosphor-react");
 
 // src/components/Avatar/styles.ts
 var Avatar = __toESM(require("@radix-ui/react-avatar"));
@@ -260,11 +324,11 @@ var AvatarFallback = styled(Avatar.Fallback, {
 });
 
 // src/components/Avatar/index.tsx
-var import_jsx_runtime = require("react/jsx-runtime");
+var import_jsx_runtime2 = require("react/jsx-runtime");
 function Avatar2(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(AvatarContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_phosphor_react2.User, {}) })
   ] });
 }
 Avatar2.displayName = "Avatar";
@@ -403,13 +467,13 @@ var Input = styled("input", {
 });
 
 // src/components/TextInput/index.tsx
-var import_jsx_runtime2 = require("react/jsx-runtime");
+var import_jsx_runtime3 = require("react/jsx-runtime");
 var TextInput = (0, import_react2.forwardRef)(
   (_a, ref) => {
     var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
-      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, props))
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(TextInputContainer, { children: [
+      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Prefix, { children: prefix }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Input, __spreadValues({ ref }, props))
     ] });
   }
 );
@@ -470,17 +534,17 @@ var Step = styled("div", {
 });
 
 // src/components/MultiStep/index.tsx
-var import_jsx_runtime3 = require("react/jsx-runtime");
+var import_jsx_runtime4 = require("react/jsx-runtime");
 function MultiStep({ size, currentStep = 1 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(MultiStepContainer, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(Label, { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(MultiStepContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Label, { children: [
       "Passo ",
       currentStep,
       " de ",
       size
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Step, { active: currentStep >= step }, step);
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Step, { active: currentStep >= step }, step);
     }) })
   ] });
 }
@@ -490,6 +554,7 @@ MultiStep.displayName = "MultiStep";
   Avatar,
   Box,
   Button,
+  Checkbox,
   Heading,
   MultiStep,
   Text,
