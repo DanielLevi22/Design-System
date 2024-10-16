@@ -1,5 +1,5 @@
 {
-  "name": "@design-system/docs",
+  "name": "@design-systens/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +13,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@design-system/eslint-config": "*",
-    "@design-system/react": "*",
-    "@design-system/tokens": "*",
+    "@design-systens/eslint-config": "*",
+    "@design-systens/react": "*",
+    "@design-systens/tokens": "*",
     "@storybook/addon-a11y": "^8.3.5",
     "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",

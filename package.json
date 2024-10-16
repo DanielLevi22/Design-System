@@ -1,15 +1,21 @@
 {
-  "name": "design-system",
+  "name": "design-systens",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter='!@design-systens/docs' && changeset publish"
   },
   "dependencies": {
     "turbo": "^2.1.3"
   },
-  "packageManager": "npm@10.7.0"
+  "packageManager": "npm@10.7.0",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9"
+  }
 }

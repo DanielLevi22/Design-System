@@ -1,6 +1,7 @@
 {
-  "name": "@design-system/eslint-config",
+  "name": "@design-systens/eslint-config",
   "license": "MIT",
+  "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
     "@rocketseat/eslint-config": "^2.2.2"

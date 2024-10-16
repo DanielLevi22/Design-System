@@ -1,5 +1,5 @@
 {
-  "name": "@design-system/tokens",
+  "name": "@design-systens/tokens",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,8 +15,8 @@
   "description": "",
   "devDependencies": {
     "tsup": "^8.3.0",
-    "@design-system/ts-config": "*",
-    "@design-system/eslint-config": "*",
+    "@design-systens/ts-config": "*",
+    "@design-systens/eslint-config": "*",
     "typescript": "^5.6.3"
   }
 }

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Heading, type HeadingProps } from '@design-system/react'
-
+import { Heading, type HeadingProps } from "@design-systens/react";
 export default {
   title: 'Typography/Heading',
   component: Heading,

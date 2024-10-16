@@ -1,4 +1,4 @@
-import { BoxProps, Box ,Text} from "@design-system/react";
+import { BoxProps, Box ,Text} from "@design-systens/react";
 import { StoryObj, Meta } from "@storybook/react";
 
 export default {
